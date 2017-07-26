@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        setTimeout(function(){
+            if(document.activeElement.tagName != "INPUT")
+                location.reload();
+        }, 2000);
+    </script>
+</head>
+<body>
+
+<h1>Class chat</h1>
+<form action="/addMessage">
+    <input type="text" name="user" required value="%%USER%%"/>
+    <input type="text" name="message" required/>
+    <input type="submit"/>
+</form>
+
+%%MESSAGES%%
+
+</body>
+</html>
