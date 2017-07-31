@@ -3,6 +3,10 @@ let express = require("express"),
 
 let app = express();
 
+
+
+
+
 app.get("/", (req, res) => {
     let messages = getMessages();
 
@@ -11,6 +15,7 @@ app.get("/", (req, res) => {
     file = file.replace("%%USER%%", req.query.user || "");
     res.send(file);
 });
+
 
 app.get("/addMessage", (req, res)=>{
     let messages = getMessages();
@@ -24,7 +29,18 @@ app.get("/addMessage", (req, res)=>{
     res.redirect(`/?user=${req.query.user}`);
 });
 
+
+
+
+
+
+
+
 app.listen(8080);
+
+
+
+
 
 function clean(txt){
     return txt.replace("+", " ").replace("<", "&lt;");
